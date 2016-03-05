@@ -22,4 +22,4 @@ install:
         - make -j4 tools/install && make -j4 toolchain/install
 
 script:
-        - make
+        - make -j4 -V=s
