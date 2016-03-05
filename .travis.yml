@@ -19,7 +19,7 @@ install:
         #- echo "CONFIG_TARGET_ramips_rt305x_KEENETIC_4G_II=y" >> .config
         - make defconfig
         - make prereq
-        - make tools/install && make toolchain/install
+        - make -j4 tools/install && make -j4 toolchain/install
 
 script:
         - make
