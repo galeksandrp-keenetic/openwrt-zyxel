@@ -1,5 +1,7 @@
 language: C
 
+cache: tools
+
 before_install:
         - sudo apt-get update -qq
         - sudo apt-get install -qq build-essential subversion git-core libncurses5-dev zlib1g-dev gawk flex quilt libssl-dev xsltproc libxml-parser-perl mercurial bzr ecj cvs unzip
@@ -9,7 +11,8 @@ install:
         - ./scripts/feeds install -a
         - echo "CONFIG_TARGET_ramips=y" >> .config
         - echo "CONFIG_TARGET_ramips_rt305x=y" >> .config
-        - echo "CONFIG_TARGET_ramips_rt305x_KEENETIC=y" >> .config
+        - echo "CONFIG_TARGET_ramips_rt305x_Default=y" >> .config
+        #- echo "CONFIG_TARGET_ramips_rt305x_KEENETIC=y" >> .config
         #- echo "CONFIG_TARGET_ramips_rt305x_KEENETIC_GIGA=y" >> .config
         #- echo "CONFIG_TARGET_ramips_rt305x_KEENETIC_LITE_A=y" >> .config
         #- echo "CONFIG_TARGET_ramips_rt305x_NBG4104=y" >> .config
@@ -19,7 +22,7 @@ install:
         #- echo "CONFIG_TARGET_ramips_rt305x_KEENETIC_4G_II=y" >> .config
         - make defconfig
         - make prereq
-        - make -j4 tools/install && make -j4 toolchain/install
+        - make --jobs 10 tools/install && make --jobs 10 toolchain/install
 
 script:
-        - make -j4 V=s
+        - make --jobs 10
