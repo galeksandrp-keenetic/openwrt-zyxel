@@ -74,6 +74,16 @@ platform_check_image() {
 	mpr-a2 | \
 	mr-102n | \
 	mzk-w300nh2 | \
+	keenetic | \
+	keenetic_giga | \
+	keenetic_lite_a | \
+	nbg4104 | \
+	keenetic_4g_a | \
+	nbg4114 | \
+	keenetic_start | \
+	keenetic_4g_ii | \
+	keenetic_lite_ii | \
+	keenetic_omni | \
 	nbg-419n | \
 	nw718 | \
 	omni-emb | \

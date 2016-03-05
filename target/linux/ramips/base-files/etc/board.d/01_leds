@@ -139,6 +139,49 @@ case $board in
 	hw550-3g)
 		set_usb_led "hw550-3g:green:usb"
 		;;
+	keenetic)
+		ucidef_set_led_default "power" "power" "zyxel:green:power" "1"
+		set_usb_led "zyxel:green:usb"
+		set_wifi_led "rt2800soc-phy0::radio"
+		;;
+	keenetic_giga)
+		ucidef_set_led_default "power" "power" "zyxel:green:power" "1"
+		set_usb_led "zyxel:green:usb"
+		set_wifi_led "zyxel:green:wlan"
+		;;
+	keenetic_lite_a)
+		ucidef_set_led_default "power" "power" "zyxel:green:power" "1"
+		;;
+	nbg4104)
+		ucidef_set_led_default "power" "power" "zyxel:green:power" "1"
+		set_wifi_led "rt2800soc-phy0::radio"
+		;;
+	keenetic_4g_a)
+		ucidef_set_led_default "power" "power" "zyxel:green:power" "1"
+		set_usb_led "zyxel:green:usb"
+		set_wifi_led "rt2800soc-phy0::radio"
+		;;
+	nbg4114)
+		ucidef_set_led_default "power" "power" "zyxel:green:power" "1"
+		set_usb_led "zyxel:green:usb"
+		set_wifi_led "zyxel:green:wlan"
+		ucidef_set_led_heartbeat "heartbeat" "reserved" "zyxel:green:reserved"
+		;;
+	keenetic_start)
+		ucidef_set_led_default "power" "power" "zyxel:green:power" "1"
+		set_wifi_led "rt2800soc-phy0::radio"
+		;;
+	keenetic_4g_ii)
+		ucidef_set_led_default "power" "power" "zyxel:green:power" "1"
+		set_usb_led "zyxel:green:usb"
+		set_wifi_led "rt2800soc-phy0::radio"
+		;;
+	keenetic_lite_ii)
+		ucidef_set_led_default "power" "power" "zyxel:green:power" "1"
+		;;
+	keenetic_omni)
+		ucidef_set_led_default "power" "power" "zyxel:green:power" "1"
+		;;
 	mlw221|\
 	mlwg2)
 		set_wifi_led "kingston:blue:wifi"

@@ -136,6 +136,12 @@ ramips_setup_interfaces()
 	firewrt | \
 	pbr-m1 | \
 	hlk-rm04 | \
+	keenetic | \
+	keenetic_lite_a | \
+	keenetic_start | \
+	keenetic_4g_ii | \
+	keenetic_lite_ii | \
+	keenetic_omni | \
 	mt7621 | \
 	mt7628 | \
 	mzk-w300nh2 | \
@@ -159,6 +165,11 @@ ramips_setup_interfaces()
 		ucidef_add_switch "switch0" "1" "1"
 		ucidef_add_switch_vlan "switch0" "1" "0 1 2 3 6t"
 		ucidef_add_switch_vlan "switch0" "2" "5 6t"
+		;;
+	keenetic_giga )
+		ucidef_set_interfaces_lan_wan "eth0.1" "eth0.2"
+		ucidef_add_switch "switch0" "1" "1"
+		ucidef_add_switch_vlan "switch0" "1" "0 1 2 3 4 5 6t"
 		;;
 	wizfi630a)
 		ucidef_set_interfaces_lan_wan "eth0.1" "eth0.2"
@@ -263,6 +274,20 @@ ramips_setup_interfaces()
 		ucidef_add_switch_vlan "switch1" "2" "4 6t"
 		;;
 
+	keenetic_4g_a)
+		ucidef_set_interfaces_lan_wan "eth0.1" "eth0.2"
+		ucidef_add_switch "switch0" "1" "1"
+		ucidef_add_switch_vlan "switch0" "1" "2 3 6t"
+		ucidef_add_switch_vlan "switch0" "2" "0 6t"
+		;;
+
+	nbg4114)
+		ucidef_set_interfaces_lan_wan "eth0.1" "eth0.2"
+		ucidef_add_switch "switch0" "1" "1"
+		ucidef_add_switch_vlan "switch0" "1" "0 1 6t"
+		ucidef_add_switch_vlan "switch0" "2" "4 6t"
+		;;
+
 	wzr-agl300nh)
 		ucidef_set_interfaces_lan_wan "eth0.1" "eth0.2"
 		ucidef_add_switch "switch0" "1" "1"
@@ -350,6 +375,16 @@ ramips_setup_macs()
 		wan_mac=$(mtd_get_mac_ascii config WAN_MAC_ADDR)
 		;;
 
+	keenetic | \
+	keenetic_giga | \
+	keenetic_lite_a | \
+	nbg4104 | \
+	keenetic_4g_a | \
+	nbg4114 | \
+	keenetic_start | \
+	keenetic_4g_ii | \
+	keenetic_lite_ii | \
+	keenetic_omni | \
 	wcr-150gn)
 		wan_mac=$(mtd_get_mac_binary factory 40)
 		;;

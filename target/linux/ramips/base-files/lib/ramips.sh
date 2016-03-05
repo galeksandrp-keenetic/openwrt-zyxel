@@ -427,6 +427,36 @@ ramips_board_detect() {
 	*"Mediatek MT7628AN evaluation board")
 		name="mt7628"
 		;;
+	*"ZyXEL Keenetic")
+		name="keenetic"
+		;;
+	*"ZyXEL Keenetic Giga")
+		name="keenetic_giga"
+		;;
+	*"ZyXEL Keenetic Lite rev.A")
+		name="keenetic_lite_a"
+		;;
+	*"ZyXEL Keenetic Lite rev.B/NBG4104")
+		name="nbg4104"
+		;;
+	*"ZyXEL Keenetic 4G rev.A")
+		name="keenetic_4g_a"
+		;;
+	*"ZyXEL Keenetic 4G rev.B/NBG4114")
+		name="nbg4114"
+		;;
+	*"ZyXEL Keenetic Start")
+		name="keenetic_start"
+		;;
+	*"ZyXEL Keenetic 4G II")
+		name="keenetic_4g_ii"
+		;;
+	*"ZyXEL Keenetic Lite II")
+		name="keenetic_lite_ii"
+		;;
+	*"ZyXEL Keenetic Omni")
+		name="keenetic_omni"
+		;;
 	*"MediaTek LinkIt Smart 7688")
 		linkit="$(dd bs=1 skip=1024 count=12 if=/dev/mtd2 2> /dev/null)"
 		if [ "${linkit}" = "LINKITS7688D" ]; then

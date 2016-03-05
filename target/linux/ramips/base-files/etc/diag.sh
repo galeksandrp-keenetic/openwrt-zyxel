@@ -117,6 +117,18 @@ get_status_led() {
 	mr-102n)
 		status_led="mr-102n:amber:status"
 		;;
+	keenetic|\
+	keenetic_giga|\
+	keenetic_lite_a|\
+	nbg4104|\
+	keenetic_4g_a|\
+	nbg4114|\
+	keenetic_start|\
+	keenetic_4g_ii|\
+	keenetic_lite_ii|\
+	keenetic_omni)
+		status_led="zyxel:green:power"
+		;;
 	nbg-419n)
 		status_led="nbg-419n:green:power"
 		;;
