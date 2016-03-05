@@ -7,5 +7,19 @@ before_install:
 install:
         - ./scripts/feeds update -a
         - ./scripts/feeds install -a
+        - echo "CONFIG_TARGET_ramips=y" >> .config
+        - echo "CONFIG_TARGET_ramips_rt305x=y" >> .config
+        - echo "CONFIG_TARGET_ramips_rt305x_KEENETIC=y" >> .config
+        - echo "CONFIG_TARGET_ramips_rt305x_KEENETIC_GIGA=y" >> .config
+        - echo "CONFIG_TARGET_ramips_rt305x_KEENETIC_LITE_A=y" >> .config
+        - echo "CONFIG_TARGET_ramips_rt305x_NBG4104=y" >> .config
+        - echo "CONFIG_TARGET_ramips_rt305x_KEENETIC_4G_A=y" >> .config
+        - echo "CONFIG_TARGET_ramips_rt305x_NBG4114=y" >> .config
+        - echo "CONFIG_TARGET_ramips_rt305x_KEENETIC_START=y" >> .config
+        - echo "CONFIG_TARGET_ramips_rt305x_KEENETIC_4G_II=y" >> .config
         - make defconfig
         - make prereq
+        - make tools/install && make toolchain/install
+
+script:
+        - make
